@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Pompa Dashboard</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0f0f0f; color: #e0e0e0; padding: 16px;
+            min-height: 100vh; }
+    h1 { font-size: 16px; color: #666; letter-spacing: 2px;
+          text-transform: uppercase; margin-bottom: 4px; }
+    .ts { font-size: 11px; color: #444; margin-bottom: 20px; }
+    .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px;
+              padding: 14px; margin-bottom: 12px; }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .emoji { font-size: 22px; }
+    .card-name { font-size: 14px; font-weight: 600; color: #fff; }
+    .card-ver { font-size: 11px; color: #555; margin-top: 2px; }
+    .backlog { list-style: none; padding: 0; }
+    .backlog li { font-size: 13px; color: #aaa; padding: 4px 0;
+                   border-bottom: 1px solid #222; }
+    .backlog li:last-child { border-bottom: none; }
+    .empty { color: #444; font-style: italic; }
+    .section-title { font-size: 12px; color: #555; letter-spacing: 1px;
+                       text-transform: uppercase; margin: 20px 0 8px; }
+    .reports { display: flex; flex-direction: column; gap: 6px; }
+    .report-link { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
+                    padding: 10px 14px; color: #7ec8e3; text-decoration: none;
+                    font-size: 13px; }
+    .footer { margin-top: 24px; font-size: 11px; color: #333; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Pompa System</h1>
+  <div class="ts">更新於 2026-03-31 00:43:18</div>
+
+  
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">🧠</span>
+        <div>
+          <div class="card-name">mainclaude</div>
+          <div class="card-ver">st3.7 · 2026-03-30 21:30:00</div>
+        </div>
+      </div>
+      <ul class="backlog"><li>驗證 hook 是否正常觸發 — 新 session 送訊息確認 conversation_log.md 有寫入</li><li>測試 linebotclaude — 開 linebotclaude session，跑 /pickup，確認讀到 ta…</li><li>alias 清單記錄 — 新建 /root/.claude/aliases.md，記錄所有 alias 對照</li><li>Sidekick 優化 — 執行太慢，找瓶頸改善</li><li>Sidekick 接情緒詞偵測 + 三層升級邏輯 — 情緒詞即刻寫進 rules/</li></ul>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">🤖</span>
+        <div>
+          <div class="card-name">linebotclaude</div>
+          <div class="card-ver">st1.1 · 2026-03-29 18:57:00</div>
+        </div>
+      </div>
+      <ul class="backlog"><li class='empty'>Backlog 空</li></ul>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">📋</span>
+        <div>
+          <div class="card-name">organizerclaude</div>
+          <div class="card-ver">st1.2 · 2026-03-30 22:46:00</div>
+        </div>
+      </div>
+      <ul class="backlog"><li>HTML 報告系統：掃各專案 status/decisions → 生成報告 → push GitHub → TG 通知</li><li>TG polling 整合：串接 @pompa_organizer_bot，接收 CEO 指令執行</li></ul>
+    </div>
+
+  <div class="section-title">最近報告</div>
+  <div class="reports"><a class="report-link" href="/reports/report_20260331_003957.html" target="_blank">📄 03/31 00:39</a></div>
+
+  <div class="footer">organizerclaude · 2026-03-31 00:43:18</div>
+  <script>
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+  </script>
+</body>
+</html>
